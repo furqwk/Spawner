@@ -1,0 +1,17 @@
+-- Script made by donerkebab/st3rkk on discord
+
+local Pets = require(game:GetService("ReplicatedStorage").Library.Directory.Pets)
+local fromPet = "Huge Pineapple Cat"
+local toPet = "Titanic Soul Owl"
+
+for i, v in pairs(Pets[fromPet] or {}) do
+    Pets[fromPet][i] = nil
+end
+for i, v in pairs(Pets[toPet] or {}) do
+    Pets[fromPet][i] = v
+end
+
+game:GetService("ReplicatedStorage").Network.Pets_Favorite:FireServer("1e3b1d3992b84c3aaa124d7829f4c2a6")
+
+local message = require(game.ReplicatedStorage.Library.Client.Message)
+message.Error("Titanic spawned! Script by @Furqwk Scripts")
